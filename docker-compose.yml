@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: django_ecci_web
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: python manage.py runserver 0.0.0.0:9000
